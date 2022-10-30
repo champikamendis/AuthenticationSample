@@ -12,7 +12,7 @@ describe('AuthController', () => {
       providers: [
         {
           provide: 'User',
-          useValue: User,
+          useValue: {},
         },
         AuthService,
       ],
