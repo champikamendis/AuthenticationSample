@@ -1,14 +1,14 @@
-import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
+import { HttpException, HttpStatus, Inject, Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose/dist';
 import { Model } from 'mongoose';
 import * as bcrypt from 'bcrypt';
 
-import { LoginDTO } from 'src/auth/login.dto';
+import { LoginDTO } from 'src/auth/dto/login.dto';
 import { User } from 'src/types/user';
-import { RegisterDTO } from './register.dto';
+import { RegisterDTO } from 'src/auth/dto/register.dto';
 
 @Injectable()
-export class UserService {
+export class AuthService {
   constructor(@InjectModel('User') private userModel: Model<User>) {}
 
   async create(RegisterDTO: RegisterDTO) {
