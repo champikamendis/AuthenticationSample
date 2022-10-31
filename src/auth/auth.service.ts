@@ -35,6 +35,7 @@ export class AuthService {
     }
   }
 
+  // Password remove from the object
   sanitizeUser(user: User) {
     const sanitized = user.toObject();
     delete sanitized['password'];
