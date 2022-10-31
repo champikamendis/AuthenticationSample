@@ -7,17 +7,17 @@ describe('AuthController', () => {
   let controller: AuthController;
 
   const mockAuthService = {
-    create: jest.fn(() => {
+    create: jest.fn((dto) => {
       return {
         _id: Date.now(),
-        email: 'champikamendis@gmail.com',
+        email: dto.email,
       };
     }),
 
-    login: jest.fn(() => {
+    login: jest.fn((dto) => {
       return {
         _id: Date.now(),
-        email: 'champikamendis@gmail.com',
+        email: dto.email,
       };
     }),
   };
