@@ -1,4 +1,4 @@
-import { HttpException, HttpStatus, Inject, Injectable } from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose/dist';
 import { Model } from 'mongoose';
 import * as bcrypt from 'bcrypt';
@@ -35,6 +35,7 @@ export class AuthService {
     }
   }
 
+  // Password remove from the object
   sanitizeUser(user: User) {
     const sanitized = user.toObject();
     delete sanitized['password'];
